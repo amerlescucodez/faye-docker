@@ -5,7 +5,7 @@ services:
     image: redis:alpine
     ports:
       - 6379:6379
-    restart: always
+    restart: unless-stopped
     networks:
       - primary
 
@@ -15,11 +15,14 @@ services:
       - redis
     depends_on:
       - redis
-    restart: always
+    restart: unless-stopped
     ports:
       - 4242:4242
+      - 4443:4443
     env_file:
       - .faye.env.development
+    volumes:
+      - ./ssl:/etc/ssl/certs/faye
     networks:
       - primary
 

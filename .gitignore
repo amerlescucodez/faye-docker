@@ -2,3 +2,5 @@
 .faye.env.*
 !.faye.env.example
 *.log
+ssl/*
+!ssl/.keep
