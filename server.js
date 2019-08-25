@@ -62,11 +62,14 @@ var sameOrigin = {
 var ensureAuthToPush = {
 	incoming: function(message, callback) {
 		if (!message.channel.match(/^\/meta\//)) {
-		  var pushToken = message.ext && message.ext.pushToken;
+			let pushToken;
+			if(message.ext){
+				pushToken = message.ext.pushToken || message.ext.auth_token
+			}
 
-		  if (pushToken !== options.pushToken) {
-			  message.error = '403::Forbidden auth token';
-		  }
+			if (pushToken !== options.pushToken) {
+				message.error = '403::Forbidden auth token';
+			}
 		}
 
 	  callback(message);
