@@ -10,7 +10,7 @@ var options = {
 	redisHost: process.env.FAYE_REDIS_HOST || 'redis',
 	redisPort: process.env.FAYE_REDIS_PORT ||  6379,
 	redisPassword: process.env.FAYE_REDIS_PASSWORD || null,
-	redisDb: process.env.FAYE_REDIS_DB || "0",
+	redisDatabase: process.env.FAYE_REDIS_DB || "0",
 	listenPort: process.env.FAYE_PORT || 4242,
 	listenPortSecure: process.env.FAYE_SSL_PORT || 4443,
 	mount: process.env.FAYE_MOUNT ||  '/faye',
@@ -34,8 +34,8 @@ var bayeux = new faye.NodeAdapter({
 		type: fayeRedis,
 		host: options.redisHost,
 		port: options.redisPort,
-		auth: options.redisPassword,
-		db:   options.redisDb,
+		password: options.redisPassword,
+		database:   options.redisDatabase,
 	}
 });
 
