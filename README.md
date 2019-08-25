@@ -82,7 +82,7 @@ services:
       - primary
 
   faye:
-    image: amerlescucodez/docker-faye-redis:1.0.1
+    image: amerlescucodez/docker-faye-redis:latest
     links:
       - redis
     depends_on:
