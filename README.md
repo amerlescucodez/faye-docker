@@ -16,6 +16,8 @@ Make sure you edit the `FAYE_PUSH_TOKEN` to something more secure than the defau
 FAYE_PUSH_TOKEN=generateyoursecuretokenhereandmakesureithasnumbersandlettersandissuperlong123happyface
 
 FAYE_REDIS_HOST=redis
+FAYE_REDIS_PASSWORD=
+FAYE_REDIS_DB=2
 FAYE_REDIS_PORT=6397
 
 FAYE_LOGGING=0
