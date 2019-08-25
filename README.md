@@ -37,7 +37,7 @@ If you wish to restrict access to the network by requiring the origin come from 
 | `FAYE_REDIS_PORT` | Default _Redis_ port. |
 | `FAYE_LOGGING` | `0` disables logging, `1` enables logging ; handshakes and disconnects to be logged to STDOUT |
 | `FAYE_PORT` | Default port that faye will bind to, naturally 42 is the answer of the universe, so... |
-| `FAYE_MOUNT` | The endpoint where faye will be accessible: ie `http://faye.local:4242/faye` |
+| `FAYE_MOUNT` | The endpoint where faye will be accessible: ie `http://localhost:4242/faye` |
 | `FAYE_TIMEOUT` | Default timeout for faye requests that take a long time. |
 | `FAYE_SAME_ORIGIN_URL` | Restrict connections to faye except from origin requests with this specified domain: ie `mydomain.com` |
 | `FAYE_USE_SSL` | `0` only use HTTP (port 80), `1` use both HTTP (port 80) and HTTPS (port 443) |
