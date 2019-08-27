@@ -86,9 +86,24 @@ var ensureAuthToPush = {
 	}
 };
 
+var customLogging = {
+	incoming: function(message, callback){
+		console.log('[' + new Date() + '] Message: ' + message);
+		callback(message);
+	},
+	outgoing: function(message, callback){
+		console.log('[' + new Date() + '] Message: ' + message);
+		callback(message);
+	}
+};
+
 // Add our extensions and start the server.
 if (options.sameOriginURL.length > 0) {
 	bayeux.addExtension(sameOrigin);
+}
+
+if (options.logging === 1){
+	bayeux.addExtension(customLogging);
 }
 
 bayeux.addExtension(ensureAuthToPush);
